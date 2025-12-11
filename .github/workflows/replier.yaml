@@ -1,0 +1,25 @@
+name: Hungry Crab
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  reply:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    env:
+      GH_REPO: ${{ github.repository }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      ISSUE: ${{ github.event.issue.number }}
+    steps:
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v2
+      - name: Clone repo
+        run: gh repo clone rohitsharma-logile/skibidi-test
+      - name: Make reply
+        run: |
+          RESPONSE="$(bun ./skibidi-test/script.js $ISSUE $secrets.TOKEN)"
+          gh issue comment $ISSUE --body "$RESPONSE"
