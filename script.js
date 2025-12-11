@@ -24,7 +24,7 @@ exec(`gh issue view ${process.argv[2]} --json title,body,author,comments`, async
 		'method': 'POST',
 		'headers': {
 	    'Content-Type': 'application/json',
-    	'Authorization': 'Bearer ' + process.env.TOKEN,
+    	'Authorization': 'Bearer ' + process.argv[3],
 		},
     body: JSON.stringify({
       'model': 'gpt-4o',
