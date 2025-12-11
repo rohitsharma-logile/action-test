@@ -2,11 +2,13 @@ name: Hungry Crab
 
 on:
   issues:
-    types:
-      - opened
+    types: [opened]
+  issue_comment:
+    types: [created]
 
 jobs:
   reply:
+    if: github.event.sender.type == 'User'
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -24,3 +26,4 @@ jobs:
         run: |
           RESPONSE="$(bun ./script.js $ISSUE $API_TOKEN)"
           gh issue comment $ISSUE --body "$RESPONSE"
+          gh issue close $ISSUE
