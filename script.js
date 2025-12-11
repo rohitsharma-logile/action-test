@@ -31,8 +31,11 @@ exec(`gh issue view ${process.argv[2]} --json title,body,author,comments`, async
       'messages': object
     })
   });
+	const json = (await res.json());
 
-	const msg = (await res.json()).choices[0].message.content
+	console.log(json)
+
+	const msg = json.choices[0].message.content
 
 	console.log(msg)
 });
