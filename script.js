@@ -31,5 +31,5 @@ exec(`gh issue view ${process.argv[2]} --json title,body,author,comments`, async
       'messages': object
     })
   });
-	return (await res.text()).choices[0].message.content
+	return (await res.json()).choices[0].message.content
 });
