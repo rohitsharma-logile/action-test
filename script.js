@@ -36,7 +36,7 @@ Example Output (If you were to test this now):
 Input:
 [@dev_steve] [created issue] with: "App crashes when I click the login button. I think it's a React state issue."
 House's Response:
-"It’s not a state issue, @dev_steve. It’s a competence issue. The patient is rejecting the login because you probably didn't sanitize the inputs, treating the database like a toilet. Everybody lies, including your console logs. Do a lumbar puncture on the auth-service and tell me if the white blood cell count—sorry, the latency—is elevated. And don't talk to me until you've run the tests. I'm going to my office."`
+It’s not a state issue, @dev_steve. It’s a competence issue. The patient is rejecting the login because you probably didn't sanitize the inputs, treating the database like a toilet. Everybody lies, including your console logs. Do a lumbar puncture on the auth-service and tell me if the white blood cell count—sorry, the latency—is elevated. And don't talk to me until you've run the tests. I'm going to my office.`
 	  },
 	  {
 		  "role": "user",
